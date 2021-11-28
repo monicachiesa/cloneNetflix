@@ -31,6 +31,7 @@ export default () => {
     loadAll();
   }, []);
 
+  //monitoramento da página para o menu
   useEffect(()=>{
     const scrollListener = () => {
       if(window.scrollY > 10) {
@@ -39,7 +40,7 @@ export default () => {
         setBlackHeader(false);
       }
     }
-
+ //escuta o scroll do mouse
     window.addEventListener('scroll', scrollListener);
     return () => {
       window.removeEventListener('scroll', scrollListener);
@@ -62,14 +63,14 @@ export default () => {
       </section>
 
       <footer>
-        Feito com <span role="img" aria-label="coração">❤️</span> pela Mônica, na vídeoaula da B7Web<br/>
+        Feito com <span role="img" aria-label="coração">❤️</span> pela Mônica, na videoaula da B7Web<br/>
         Direitos de imagem para Netflix<br/>
         Dados pegos do site Themoviedb.org
       </footer>
 
       {movieList.length <= 0 &&
         <div className="loading">
-          <img src="https://www.filmelier.com/pt/br/news/wp-content/uploads/2020/03/netflix-loading.gif" alt="Carregando" />
+          <img className="carregando" src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt="Carregando" />
         </div>
       }
     </div>
